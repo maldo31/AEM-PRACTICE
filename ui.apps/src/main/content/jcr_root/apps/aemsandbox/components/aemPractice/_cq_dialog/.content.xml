@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+  xmlns:cq="http://www.day.com/jcr/cq/1.0"
+  xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+  jcr:primaryType="nt:unstructured"
+  jcr:title="AEM Practice"
+  sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="granite/ui/components/coral/foundation/tabs"
+              maximized="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                      jcr:primaryType="nt:unstructured"
+                      jcr:title="Properties"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                              margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <damReference
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                              fieldLabel="DAM Reference"
+                                              name="./damReference"
+                                              pickerSrc="/mnt/overlay/dam/cfm/admin/content/v2/associated-content/assetpicker.html?root=/content/dam&amp;mode=single&amp;filter=nosystem"
+                                              rootPath="/content/dam"/>
+                                            <title
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                              fieldLabel="Title"
+                                              name="./title"/>
+                                            <isBackgroundImage
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                              checked="{Boolean}true"
+                                              fieldDescription="is background image"
+                                              name="./backgroundImage"
+                                              text="is background image"
+                                              uncheckedValue="{Boolean}false"
+                                              value="true"/>
+                                            <navigationItemsSection
+                                              jcr:primaryType="nt:unstructured"
+                                              granite:class="enlarged-margin-top"
+                                              sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <navigationItemsSeparator
+                                                      jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                      text="Navigation Items"/>
+                                                    <navigationItemDefinition
+                                                      jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                      composite="{Boolean}true">
+                                                        <field
+                                                          jcr:primaryType="nt:unstructured"
+                                                          sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                          name="./navigationSection">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <well
+                                                                  jcr:primaryType="nt:unstructured"
+                                                                  sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <pageTitle
+                                                                          jcr:primaryType="nt:unstructured"
+                                                                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                          fieldLabel="Title"
+                                                                          required="{Boolean}true"
+                                                                          maxlength="35"
+                                                                          name="pageTitle"/>
+                                                                        <pagePath
+                                                                          jcr:primaryType="nt:unstructured"
+                                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                          fieldLabel="Logo Path"
+                                                                          name="pagePath"
+                                                                          required="true"
+                                                                          rootPath="/content"/>
+                                                                    </items>
+                                                                </well>
+                                                            </items>
+                                                        </field>
+                                                    </navigationItemDefinition>
+                                                </items>
+                                            </navigationItemsSection>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

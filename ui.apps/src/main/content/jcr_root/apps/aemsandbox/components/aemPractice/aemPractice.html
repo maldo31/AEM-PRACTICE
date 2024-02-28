@@ -1,0 +1,37 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.all @ categories='aemsandbox.aemPractice'}"/>
+
+<div
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.aemPractice="com.sandbox.core.models.AemPracticeModel"
+    data-sly-test.className="${component.properties.className || 'cmp-aemPractice'}"
+    class="${className}">
+  <div class="${className}__content aem-Grid aem-Grid--12">
+    <h1>
+      ${aemPractice.title}
+    </h1>
+    <sly data-sly-test.showImage="${ (wcmmode.preview || wcmmode.disabled) && aemPractice.backgroundImage}">
+      <img src="${aemPractice.damReference}"/>
+    </sly>
+    <ul data-sly-test="${aemPractice.navigationItems}"
+        data-sly-list.navItem="${aemPractice.navigationItems}">
+      <li>
+        <sly data-sly-test="${navItemList.first}">
+          <b><a href="${navItem.pagePath}.html">${navItem.pageTitle}</a></b>
+        </sly>
+        <sly data-sly-test="${navItemList.last}">
+          <i><a href="${navItem.pagePath}.html">${navItem.pageTitle}</a></i>
+        </sly>
+        <sly data-sly-test="${!navItemList.first && !navItemList.last}">
+          <a href="${navItem.pagePath}.html">${navItem.pageTitle}</a>
+        </sly>
+      </li>
+    </ul>
+    <h2>${currentPage.title}</h2>
+    <h3>${currentPage.path}</h3>
+    <sly data-sly-test.authorMode="${wcmmode.edit}">
+      <h1>AUTHOR MODE</h1>
+    </sly>
+  </div>
+</div>
+
